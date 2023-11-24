@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // RETORNA TODOS OS PRODUTOS
 router.get('/', (req, res, next) => {
     res.status(200).send({
@@ -10,9 +11,14 @@ router.get('/', (req, res, next) => {
 
 // INSERE UM PRODUTO
 router.post('/', (req, res, next) => {
-    res.status(201).send({
-        mensagem: 'Insere um produto'
-    })
+    const produto = {
+        nome: req.body.nome,
+        preco: req.body.preco
+    };
+    res.status(201).send({ 
+        mensagem: 'Insere um produto',
+    produtoCriado: produto
+})
 });
 
 // RETORNA OS DADOS DE UM PRODUTO

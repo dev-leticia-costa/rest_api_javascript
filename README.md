@@ -13,3 +13,6 @@ create routes
 
 install nodemon: npm install --save-dev nodemon (ver comando instalação global)
 install: npm install --save morgan (GET /pedidos 200 4.028 ms - 33)
+
+defining body message: json ("body-parser")
+cors: mdn (no servidor da api, deve ser definida as informações passadas no cabeçalho para a comunicação de servidores, como medida de segurança)
