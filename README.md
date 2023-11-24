@@ -10,3 +10,6 @@ create server.js and app.js
 run node server.js (run server)
 test postman get: localhost:3000
 create routes
+
+install nodemon: npm install --save-dev nodemon (ver comando instalação global)
+install: npm install --save morgan (GET /pedidos 200 4.028 ms - 33)
