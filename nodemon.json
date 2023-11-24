@@ -1,0 +1,9 @@
+{
+    "env" : {
+        "MYSQL_USER" : "root",
+        "MYSQL_PASSWORD" : "projeto",
+        "MYSQL_DATABASE" : "factory",
+        "MYSQL_HOST" : "localhost",
+        "MYSQL_PORT" : 3306
+    }
+}
