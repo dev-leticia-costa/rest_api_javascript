@@ -6,11 +6,13 @@ const bodyParser = require('body-parser');
 
 const rotaProdutos = require('./routes/produtos');
 const rotaPedidos = require('./routes/pedidos');
+const rotaUsuarios = require('./routes/usuarios');
 
 app.use(morgan('dev'));
 
 app.use(bodyParser.urlencoded({ extended: false }));  // apenas dados simples
 app.use(bodyParser.json()); // json de entrada no body
+app.use('/usuarios', rotaUsuarios);
 
 //CORS/ header
 app.use((req, res, next) => {
@@ -19,7 +21,7 @@ app.use((req, res, next) => {
         'Access-Control-Allow-Header',
         'Origin, X-Requested-With, Content-Type, Accept, Authorization'
     );
-//methods accepts
+// accept
     if (req.method === 'OPTIONS') {
         res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
         return res.status(200).send({});
