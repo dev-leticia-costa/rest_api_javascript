@@ -10,7 +10,7 @@ router.post('/cadastro', (req, res, next) => {
         conn.query('SELECT * FROM usuarios WHERE email = ?', [req.body.email], (error, results) => {
             if (error) { return res.status(500).send({ error: error }) }
             if (results.length > 0) {
-                res.status(409).send({ mensagem: 'Usuário já cadastrado' })
+                res.status(409).send({ mensagem: 'E-mail já existente' })
             } else {
                 bcrypt.hash(req.body.senha, 10, (errBcrypt, hash) => {
                     if (errBcrypt) { return res.status(500).send({ error: errBcrypt }) }
@@ -44,11 +44,11 @@ router.post('/login', (req, res, next) => {
             conn.release();
             if (error) { return res.status(500).send({ error: error }) }
             if (results.length < 1) {
-                return res.status(401).send({ mensagem: 'Falha na autenticação' })
+                return res.status(401).send({ mensagem: 'Usuário e/ou senha inválidos' })
             }
             bcrypt.compare(req.body.senha, results[0].senha, (err, result) => {
                 if (err) {
-                    return res.status(401).send({ mensagem: 'Falha na autenticação' })
+                    return res.status(401).send({ mensagem: 'Usuário e/ou senha inválidos' })
                 }
                 if (result) {
                     const token = jwt.sign({
@@ -64,7 +64,7 @@ router.post('/login', (req, res, next) => {
                         token: token
                     });
                 }
-                return res.status(401).send({ mensagem: 'Falha na autenticação' })
+                return res.status(401).send({ mensagem: 'Usuário e/ou senha inválidos' })
             });
         });
     });
