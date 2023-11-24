@@ -27,3 +27,5 @@ senha VARCHAR(100)
 );
 
 npm install --save bcrypt
+
+npm install jsonwebtoken --save
