@@ -1,4 +1,7 @@
 # Desafio Escribo: Node.js Project
+Develop a RESTful API for user authentication, which allows registration (sign up), authentication (sign in) and user information retrieval operations, using Express, JWT with token and and Hash encryption on password. 
+
+
 ## Project Overview
 This Node.js project involves the use of various npm packages to create a web server with Express, connect to a MySQL database, and implement user authentication using bcrypt and JSON Web Tokens (jsonwebtoken).
 
