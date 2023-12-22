@@ -62,3 +62,13 @@ For user authentication, install the bcrypt and jsonwebtoken packages:
 
 
 Implement user authentication using bcrypt for password hashing and JSON Web Tokens for secure user sessions.
+
+## Technologies:
+Node.js: Runtime environment for JavaScript on the server side.
+Express: Web framework for Node.js, used to build the RESTful application.
+bcrypt: Library for password encryption.
+body-parser: Middleware for processing HTTP request bodies.
+jsonwebtoken: Implementation of JSON Web Tokens (JWT) for authentication.
+morgan: Middleware for logging HTTP requests.
+mysql and mysql2: Drivers for interacting with MySQL databases.
+nodemon: Development tool that automatically restarts the server on code changes.
